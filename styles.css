@@ -131,3 +131,176 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
 .login-btn {
     background: #e60012;
 }
+
+/* 卡片樣式 */
+.result-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+}
+/* 卡片標頭 */
+.result-card-header {
+    background: #c40007;
+    color: #fff;
+    padding: 1rem;
+}
+.result-card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.result-card-header p {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+/* 卡片主體 */
+.result-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.balance-label span {
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.balance-amount {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: bold;
+}
+.balance-amount .unit {
+    font-size: 1rem;
+    margin-left: 0.2rem;
+}
+
+/* 廣告橫幅 */
+.screenshot-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* 詳細資訊清單 */
+.details-list {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+.details-list h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+.details-list ul {
+    list-style: none;
+    padding: 0;
+}
+.details-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+}
+.details-list .bullet {
+    width: 6px;
+    height: 6px;
+    background: #e60012;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    margin-top: 0.4rem;
+    flex-shrink: 0;
+}
+.details-list strong {
+    display: block;
+    margin-top: 0.2rem;
+    font-weight: normal;
+    color: #333;
+}
+
+.payment-status {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.status-title {
+    color: #c40007;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.status-divider {
+    width: 40px;
+    height: 4px;
+    background: #c40007;
+    margin: 0.2rem auto 1rem;
+}
+.fee-title {
+    color: #c40007;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.query-time {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+.fee-table {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+.fee-header, .fee-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+}
+.fee-header {
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+}
+.fee-row {
+    border-top: 1px solid #ccc;
+}
+.amount {
+    color: #c40007;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.pagination button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+}
+.current-page {
+    background: #c40007;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.pay-now-btn {
+    background: #c40007;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}

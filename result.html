@@ -7,29 +7,95 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- Header 與 GPS/Menu -->
 <header class="site-header">
   <img src="img/logo.png" alt="遠通電收 Logo" class="logo">
-  <button class="menu-btn">≡</button>
+  <div class="header-right">
+    <img src="img/gps.png" alt="位置圖示" class="gps-icon">
+    <button class="menu-btn">≡</button>
+  </div>
 </header>
 
 <main class="main-container">
-  <h1 class="page-title">查詢結果</h1>
-  <div class="info-block">
-    <p><strong>車號：</strong>ABC-123</p>
-    <p><strong>帳號：</strong>N12***6789</p>
-    <p><strong>試算餘額：</strong>40元</p>
-  </div>
+  <!-- 最上方紅底卡片 -->
+  <section class="result-card">
+    <div class="result-card-header">
+      <h2>ABC-123</h2>
+      <p>自動儲值用戶</p>
+    </div>
+    <div class="result-card-body">
+      <div class="balance-label">
+        <span>即時<br>試算餘額</span>
+      </div>
+      <div class="balance-amount">
+        <span>15</span><span class="unit">元</span>
+      </div>
+    </div>
+  </section>
 
-  <img src="img/ad.png" alt="廣告橫幅" class="ad-banner">
+  <!-- 廣告橫幅 -->
+  <section class="screenshot-container">
+    <img src="img/ad.png" alt="申辦 eTag 停車扣繳">
+  </section>
 
-  <section class="debt">
-    <h2>欠費未繳</h2>
-    <table>
-      <tr><th>停車日期</th><th>金額</th></tr>
-      <tr><td>2025/04/11</td><td>120元</td></tr>
-    </table>
-    <a href="payment.html" class="btn-submit">立即繳納</a>
+  <!-- 底下詳細資訊清單 -->
+  <section class="details-list">
+    <h2>ABC-123</h2>
+    <ul>
+      <li>
+        <span class="bullet"></span>
+        車主證號<br><strong>N12***6789</strong>
+      </li>
+      <li>
+        <span class="bullet"></span>
+        帳戶啟用日期<br><strong>2023/02/14</strong>
+      </li>
+    </ul>
+
+    <!-- 新增：欠費未繳區塊 -->
+    <section class="payment-status">
+      <h3 class="status-title">欠費未繳</h3>
+      <div class="status-divider"></div>
+
+      <h4 class="fee-title">路邊停車費</h4>
+      <p class="query-time">查詢時間：2025/05/03 09:05</p>
+
+      <div class="fee-table">
+        <div class="fee-header">
+          <span>停車日期</span>
+          <span>金額</span>
+        </div>
+        <div class="fee-row">
+          <span>2025/04/11</span>
+          <span class="amount">120元</span>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <button>&lt;</button>
+        <span class="current-page">1</span>
+        <button>&gt;</button>
+      </div>
+
+      <!-- 這顆按鈕會被 JS 監聽跳轉 -->
+      <button id="payNowBtn" class="btn-submit pay-now-btn">立即繳納</button>
+    </section>
+  </section>
+
+  <!-- 其他截圖連續顯示（示意） -->
+  <section class="screenshot-container">
+    <img src="img/result_1.jpg" alt="">
+    <img src="img/result_2.jpg" alt="">
+    <img src="img/start_7.jpg" alt="">
+    <img src="img/start_8.jpg" alt="">
+    <img src="img/start_9.jpg" alt="">
+    <img src="img/start_10.jpg" alt="">
+    <img src="img/start_11.jpg" alt="">
+    <img src="img/start_12.jpg" alt="">
   </section>
 </main>
+
+<!-- 別忘了引入 JS，綁定「立即繳納」事件 -->
+<script src="script.js"></script>
 </body>
 </html>
