@@ -1,90 +1,102 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>遠通電收｜首頁</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- 全站共用樣式 -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<!-- Header -->
+<!-- Header：Logo + GPS 圖示 + 選單按鈕 -->
 <header class="site-header">
-  <img src="img/logo.png" alt="遠通電收 Logo" class="logo">
+  <img src="img/logo.png" alt="遠通電收 Logo" class="logo" />
   <div class="header-right">
-    <img src="img/gps.png" alt="位置圖示" class="gps-icon">
+    <img src="img/gps.png" alt="位置圖示" class="gps-icon" />
     <button class="menu-btn">≡</button>
   </div>
 </header>
 
-<!-- 主內容 -->
+<!-- 主內容容器 -->
 <main class="main-container">
-  <!-- 幻燈片 / 廣告 -->
+  <!-- 幻燈片 / 廣告橫幅 -->
   <section class="screenshot-container">
-    <img src="img/ad.png" alt="申辦 eTag 停車扣繳">
+    <img src="img/ad.png" alt="申辦 eTag 停車扣繳" class="rounded"/>
   </section>
 
-  <!-- 查詢 / 登入 按鈕 -->
+  <!-- 查詢 / 登入 呼叫按鈕 -->
   <button id="openModal" class="cta-btn">
     車號查詢 / 會員登入
   </button>
 
-  <!-- 其他截圖示意連續顯示 -->
+  <!-- 其他截圖：垂直排列，貼齊顯示 -->
   <section class="screenshot-container">
-    <img src="img/start_1.jpg" alt="">
-    <img src="img/start_2.jpg" alt="">
-    <img src="img/start_3.jpg" alt="">
-    <img src="img/start_4.jpg" alt="">
-    <img src="img/start_6.jpg" alt="">
-    <img src="img/start_7.jpg" alt="">
-    <img src="img/start_8.jpg" alt="">
-    <img src="img/start_9.jpg" alt="">
-    <img src="img/start_10.jpg" alt="">
-    <img src="img/start_11.jpg" alt="">
-    <img src="img/start_12.jpg" alt="">
+    <img src="img/start_1.jpg" alt="" class="rounded"/>
+    <img src="img/start_2.jpg" alt="" />
+    <img src="img/start_3.jpg" alt="" />
+    <img src="img/start_4.jpg" alt="" />
+    <img src="img/start_6.jpg" alt="" />
+    <img src="img/start_7.jpg" alt="" />
+    <img src="img/start_8.jpg" alt="" />
+    <img src="img/start_9.jpg" alt="" />
+    <img src="img/start_10.jpg" alt="" />
+    <img src="img/start_11.jpg" alt="" />
+    <img src="img/start_12.jpg" alt="" />
   </section>
 </main>
 
-<!-- 查詢 / 登入 彈窗 -->
+<!-- 車號查詢 / 會員登入 彈窗 -->
 <div id="modalOverlay" class="modal-overlay">
   <div class="modal plate-modal">
+    <!-- 關閉按鈕 -->
     <button id="closeModal" class="close-btn">×</button>
-    <!-- 分頁切換 -->
+
+    <!-- 分頁切換：車號查詢 vs 會員登入 -->
     <div class="tabs">
       <button id="modalPlateTab" class="tab active">車號查詢</button>
       <button id="modalLoginTab" class="tab">會員登入</button>
     </div>
+
     <!-- 說明文字 -->
     <p class="modal-desc">
-      登入車號查詢／會員帳號，<br>
+      登入車號查詢／會員帳號，<br />
       可立即使用個人化查詢、儲值、繳費等服務
     </p>
+
     <!-- 車號查詢表單 -->
     <form id="modalPlateForm" class="modal-form">
-      <input type="text" name="plate" placeholder="請輸入欲查詢的車號" required>
-      <input type="text" name="id" placeholder="車主身分證或統一編號" required>
+      <input type="text" name="plate" placeholder="請輸入欲查詢的車號" required />
+      <input type="text" name="id" placeholder="車主身分證或統一編號" required />
+
+      <!-- 驗證碼群組 -->
       <div class="captcha-group">
-        <input type="text" name="captcha" placeholder="請輸入驗證碼" required>
-        <img src="img/captcha.png" alt="驗證碼">
+        <input type="text" name="captcha" placeholder="請輸入驗證碼" required />
+        <img src="img/captcha.png" alt="驗證碼" />
         <button type="button" id="refreshCaptcha" class="refresh-btn">⟳</button>
       </div>
+
       <button type="submit" class="btn-submit">查詢</button>
       <a href="#" class="apply-link">立即申請會員帳號 →</a>
     </form>
-    <!-- 會員登入表單（留著備用） -->
+
+    <!-- 會員登入表單（預留備用） -->
     <form id="loginForm" class="modal-form hidden">
-      <input type="text" name="plate" placeholder="會員帳號" required>
-      <input type="text" name="id" placeholder="會員密碼" required>
+      <input type="text" name="account" placeholder="會員帳號" required />
+      <input type="password" name="password" placeholder="會員密碼" required />
+
       <div class="captcha-group">
-        <input type="text" name="captcha" placeholder="請輸入驗證碼" required>
-        <img src="img/captcha.png" alt="驗證碼">
+        <input type="text" name="captcha" placeholder="請輸入驗證碼" required />
+        <img src="img/captcha.png" alt="驗證碼" />
         <button type="button" id="refreshCaptcha" class="refresh-btn">⟳</button>
       </div>
+
       <button type="submit" class="btn-submit">登入</button>
       <a href="#" class="apply-link">立即申請會員帳號 →</a>
     </form>
   </div>
 </div>
 
+<!-- 全域腳本：綁定 Modal、表單行為等 -->
 <script src="script.js"></script>
 </body>
 </html>

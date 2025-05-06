@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>遠通電收｜繳費</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <!-- Header 與 GPS/Menu -->
 <header class="site-header">
-  <img src="img/logo.png" alt="遠通電收 Logo" class="logo"/>
+  <img src="img/logo.png" alt="遠通電收 Logo" class="logo" />
   <div class="header-right">
-    <img src="img/gps.png" alt="位置圖示" class="gps-icon"/>
+    <img src="img/gps.png" alt="位置圖示" class="gps-icon" />
     <button class="menu-btn">≡</button>
   </div>
 </header>
 
+<!-- 主內容：繳費資訊 & 表單 -->
 <main class="main-container">
-  <!-- 繳費資訊區塊 -->
+  <!-- 繳費資訊顯示區 -->
   <section class="payment-info">
     <div class="row">
-      <div class="label">特約商店 (Merchant)</div>
+      <div class="label">特約商店</div>
       <div class="value">FETCService</div>
     </div>
     <div class="row">
-      <div class="label">交易日期 (Trans. Date)</div>
-      <div class="value">2025/05/03</div>
-    </div>
-    <div class="row">
-      <div class="label">交易金額 (Trans. Amount) 新台幣 (NT$)</div>
+      <div class="label">交易金額 新台幣 (NT$)</div>
       <div class="value">120</div>
     </div>
   </section>
@@ -46,6 +43,7 @@
                 required
         />
       </div>
+
       <div class="form-row">
         <label for="expiry">有效期</label>
         <input
@@ -56,6 +54,7 @@
                 required
         />
       </div>
+
       <div class="form-row">
         <label for="cvv">CVV</label>
         <input
@@ -66,11 +65,15 @@
                 required
         />
       </div>
-      <button type="submit" class="btn-submit pay-btn">立即繳納</button>
+
+      <button type="submit" class="btn-submit pay-btn">
+        立即繳納
+      </button>
     </form>
   </section>
 </main>
 
+<!-- 全域腳本：繳費表單攔截提示 -->
 <script src="script.js"></script>
 </body>
 </html>

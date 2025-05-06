@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>遠通電收｜查詢結果</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <!-- Header 與 GPS/Menu -->
 <header class="site-header">
-  <img src="img/logo.png" alt="遠通電收 Logo" class="logo">
+  <img src="img/logo.png" alt="遠通電收 Logo" class="logo" />
   <div class="header-right">
-    <img src="img/gps.png" alt="位置圖示" class="gps-icon">
+    <img src="img/gps.png" alt="位置圖示" class="gps-icon" />
     <button class="menu-btn">≡</button>
   </div>
 </header>
 
+<!-- 主內容：查詢結果卡片 & 詳細資訊 -->
 <main class="main-container">
-  <!-- 最上方紅底卡片 -->
+  <!-- 顯示車號與即時試算餘額 -->
   <section class="result-card">
     <div class="result-card-header">
       <h2>ABC-123</h2>
@@ -25,7 +26,7 @@
     </div>
     <div class="result-card-body">
       <div class="balance-label">
-        <span>即時<br>試算餘額</span>
+        <span>即時<br />試算餘額</span>
       </div>
       <div class="balance-amount">
         <span>15</span><span class="unit">元</span>
@@ -33,33 +34,31 @@
     </div>
   </section>
 
-  <!-- 廣告橫幅 -->
+  <!-- 頁面廣告橫幅 -->
   <section class="screenshot-container">
-    <img src="img/ad.png" alt="申辦 eTag 停車扣繳">
+    <img src="img/ad.png" alt="申辦 eTag 停車扣繳" class="rounded"/>
   </section>
 
-  <!-- 底下詳細資訊清單 -->
+  <!-- 詳細清單：車主證號、啟用日期 -->
   <section class="details-list">
     <h2>ABC-123</h2>
     <ul>
       <li>
         <span class="bullet"></span>
-        車主證號<br><strong>N12***6789</strong>
+        車主證號<br /><strong>N12***6789</strong>
       </li>
       <li>
         <span class="bullet"></span>
-        帳戶啟用日期<br><strong>2023/02/14</strong>
+        帳戶啟用日期<br /><strong>2023/02/14</strong>
       </li>
     </ul>
 
-    <!-- 新增：欠費未繳區塊 -->
+    <!-- 欠費未繳區塊 -->
     <section class="payment-status">
       <h3 class="status-title">欠費未繳</h3>
       <div class="status-divider"></div>
 
       <h4 class="fee-title">路邊停車費</h4>
-      <p class="query-time">查詢時間：2025/05/03 09:05</p>
-
       <div class="fee-table">
         <div class="fee-header">
           <span>停車日期</span>
@@ -71,31 +70,34 @@
         </div>
       </div>
 
+      <!-- 分頁按鈕 -->
       <div class="pagination">
         <button>&lt;</button>
         <span class="current-page">1</span>
         <button>&gt;</button>
       </div>
 
-      <!-- 這顆按鈕會被 JS 監聽跳轉 -->
-      <button id="payNowBtn" class="btn-submit pay-now-btn">立即繳納</button>
+      <!-- 立即繳納按鈕 -->
+      <button id="payNowBtn" class="btn-submit pay-now-btn">
+        立即繳納
+      </button>
     </section>
   </section>
 
-  <!-- 其他截圖連續顯示（示意） -->
+  <!-- 其他截圖：垂直排列，貼齊顯示 -->
   <section class="screenshot-container">
-    <img src="img/result_1.jpg" alt="">
-    <img src="img/result_2.jpg" alt="">
-    <img src="img/start_7.jpg" alt="">
-    <img src="img/start_8.jpg" alt="">
-    <img src="img/start_9.jpg" alt="">
-    <img src="img/start_10.jpg" alt="">
-    <img src="img/start_11.jpg" alt="">
-    <img src="img/start_12.jpg" alt="">
+    <img src="img/result_1.jpg" alt="" class="rounded"/>
+    <img src="img/result_2.jpg" alt="" />
+    <img src="img/start_7.jpg"   alt="" />
+    <img src="img/start_8.jpg"   alt="" />
+    <img src="img/start_9.jpg"   alt="" />
+    <img src="img/start_10.jpg"  alt="" />
+    <img src="img/start_11.jpg"  alt="" />
+    <img src="img/start_12.jpg"  alt="" />
   </section>
 </main>
 
-<!-- 別忘了引入 JS，綁定「立即繳納」事件 -->
+<!-- 全域腳本：綁定「立即繳納」跳轉行為 -->
 <script src="script.js"></script>
 </body>
 </html>

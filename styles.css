@@ -1,146 +1,211 @@
-/* Reset & Mobile-first */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: sans-serif; background: #f9f9f9; color: #333; }
+/* —————— Reset & Base —————— */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
 
-/* Header */
+/* —————— Header —————— */
 .site-header {
-    display: flex; justify-content: space-between; align-items: center;
-    background: #fff; padding: 1rem; border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
 }
-.logo { height: 40px; }
-.header-right { display: flex; align-items: center; }
-.gps-icon { width: 24px; margin-right: 4px; cursor: pointer; }
+.logo {
+    height: 40px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.gps-icon {
+    width: 24px;
+    margin-right: 4px;
+    cursor: pointer;
+}
 .menu-btn {
-    background: none; border: none; font-size: 1.5rem; cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-/* 主內容 */
+/* —————— 主內容容器 —————— */
 .main-container {
-    padding: 1rem; display: flex; flex-direction: column; gap: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 .cta-btn {
-    background: #e60012; color: #fff;
-    padding: 1rem; border: none; border-radius: 5px;
-    font-size: 1rem; cursor: pointer;
+    background: #e60012;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
 }
+
+/* —————— 截圖容器：垂直貼齊無間隙 —————— */
 .screenshot-container {
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap: 0;       /* 圖片間距為零 */
+    margin: 0;
+    padding: 0;
+    font-size: 0; /* 避免 inline-block 行高空隙 */
 }
 .screenshot-container img {
-    width: 100%; height: auto; display: block;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+img.rounded {
+    border-radius: 8px;
 }
 
-/* Modal Overlay */
+/* —————— Modal 彈窗 —————— */
 .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.5);
-    justify-content: center; align-items: center; z-index: 1000;
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
-.modal-overlay.active { display: flex; }
-
-/* Modal 內容 */
+.modal-overlay.active {
+    display: flex;
+}
 .modal {
-    position: relative; background: #fff; padding: 1.5rem;
-    border-radius: 8px; width: 90%; max-width: 360px;
+    position: relative;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 360px;
 }
 .close-btn {
-    position: absolute; top: 0.5rem; right: 0.5rem;
-    background: none; border: none; font-size: 1.5rem; cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-/* 分頁 Tabs */
-.tabs { display: flex; margin-bottom: 0.5rem; position: relative; }
+/* —————— Tabs 分頁 —————— */
+.tabs {
+    display: flex;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
 .tab {
-    flex: 1; padding: 0.8rem 0; text-align: center;
-    background: #f1604c; color: #fff; border: none; cursor: pointer;
+    flex: 1;
+    padding: 0.8rem 0;
+    text-align: center;
+    background: #f1604c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
     position: relative;
 }
 .tab.active {
-    background: #c40007; color: #fff;
+    background: #c40007;
 }
 .tab.active::after {
     content: "";
-    position: absolute; bottom: -8px; left: 50%;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
     transform: translateX(-50%);
-    border-width: 8px 8px 0; border-style: solid;
+    border-width: 8px 8px 0;
+    border-style: solid;
     border-color: #c40007 transparent transparent;
 }
 
-/* 說明文字 */
+/* —————— Modal 文字 & 表單 —————— */
 .modal-desc {
-    text-align: center; color: #666;
-    font-size: 14px; margin-bottom: 1rem;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 1rem;
     line-height: 1.4;
 }
-
-/* 查詢表單 */
 .modal-form {
-    display: flex; flex-direction: column;
-    background: #fff; /* 可保留白底 */
+    display: flex;
+    flex-direction: column;
 }
-.modal-form.hidden { display: none; }
+.modal-form.hidden {
+    display: none;
+}
 .modal-form input {
-    width: 100%; height: 44px; padding: 0 0.8rem;
+    width: 100%;
+    height: 44px;
+    padding: 0 0.8rem;
     margin-bottom: 0.8rem;
-    border: 2px solid #ccc; border-radius: 4px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
     font-size: 16px;
     color: #333;
 }
 .modal-form input::placeholder {
     color: #aaa;
 }
-
-/* 驗證碼群組 */
 .captcha-group {
-    display: flex; align-items: center; gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 0.8rem;
 }
-.captcha-group img { height: 44px; }
+.captcha-group img {
+    height: 44px;
+}
 .refresh-btn {
-    background: none; border: none;
-    font-size: 1.5rem; cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
-
-/* 查詢按鈕 */
 .btn-submit {
-    width: 100%; height: 44px;
-    background: #eb9e52; color: #fff;
-    border: none; border-radius: 4px;
-    font-size: 16px; cursor: pointer;
+    width: 100%;
+    height: 44px;
+    background: #eb9e52;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
     margin-bottom: 0.8rem;
 }
-
-/* 立即申請 */
 .apply-link {
-    text-align: center; color: #eb9e52;
-    text-decoration: none; font-size: 14px;
+    text-align: center;
+    color: #eb9e52;
+    font-size: 14px;
+    text-decoration: none;
 }
 
-/* 登入表單 (備用) */
-.input-group {
-    position: relative; margin-bottom: 1rem;
-}
-.input-icon {
-    position: absolute; top: 50%; left: 1rem;
-    transform: translateY(-50%); width: 20px; opacity: 0.7;
-}
-.input-group input {
-    padding-left: 2.8rem; border: none;
-    background: #3a3a3a; color: #fff;
-}
-.login-btn {
-    background: #e60012;
-}
-
-/* 卡片樣式 */
+/* —————— 查詢結果卡片 —————— */
 .result-card {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 1rem 0;
 }
-/* 卡片標頭 */
 .result-card-header {
     background: #c40007;
     color: #fff;
@@ -149,14 +214,11 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
 .result-card-header h2 {
     margin: 0;
     font-size: 1.2rem;
-    line-height: 1;
 }
 .result-card-header p {
     margin: 0.4rem 0 0;
     font-size: 0.9rem;
-    line-height: 1.2;
 }
-/* 卡片主體 */
 .result-card-body {
     display: flex;
     justify-content: space-between;
@@ -164,13 +226,11 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     padding: 1rem;
 }
 .balance-label span {
-    color: #333;
     font-size: 0.9rem;
     line-height: 1.4;
 }
 .balance-amount {
     font-size: 1.6rem;
-    color: #333;
     font-weight: bold;
 }
 .balance-amount .unit {
@@ -178,30 +238,20 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     margin-left: 0.2rem;
 }
 
-/* 廣告橫幅 */
-.screenshot-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-/* 詳細資訊清單 */
+/* —————— 詳細資訊清單 —————— */
 .details-list {
     background: #fff;
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
 }
 .details-list h2 {
-    margin: 0 0 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 .details-list ul {
     list-style: none;
-    padding: 0;
 }
 .details-list li {
     display: flex;
@@ -215,20 +265,14 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     border-radius: 50%;
     margin-right: 0.5rem;
     margin-top: 0.4rem;
-    flex-shrink: 0;
-}
-.details-list strong {
-    display: block;
-    margin-top: 0.2rem;
-    font-weight: normal;
-    color: #333;
 }
 
+/* —————— 欠費未繳 區塊 —————— */
 .payment-status {
     background: #fff;
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -246,11 +290,6 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
 .fee-title {
     color: #c40007;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-.query-time {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
 }
 .fee-table {
     border: 1px solid #ccc;
@@ -284,19 +323,19 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     background: none;
     border: none;
     font-size: 1.2rem;
-    margin: 0 0.5rem;
 }
 .current-page {
-    background: #c40007;
-    color: #fff;
+    display: inline-block;
     width: 28px;
     height: 28px;
     line-height: 28px;
+    background: #c40007;
+    color: #fff;
     border-radius: 50%;
-    display: inline-block;
+    text-align: center;
 }
 
-/* ---------- 繳費資訊樣式 ---------- */
+/* —————— 繳費頁：資訊 & 表單 —————— */
 .payment-info .row {
     margin-bottom: 1rem;
 }
@@ -310,20 +349,17 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     color: #333;
 }
 
-/* ---------- 繳費表單 ---------- */
 .payment-form {
     background: #fff;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     margin-top: 1rem;
 }
 .payment-form .form-row {
     margin-bottom: 1rem;
 }
 .payment-form label {
-    display: block;
-    margin-bottom: 0.4rem;
     font-size: 0.9rem;
     color: #333;
 }
@@ -332,14 +368,13 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     padding: 0.8rem;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 1rem;
     background: #fafafa;
 }
 .payment-form input::placeholder {
     color: #aaa;
 }
 
-/* ---------- 按鈕樣式 ---------- */
+/* —————— 按鈕互動效果 —————— */
 .pay-btn {
     width: 100%;
     padding: 0.8rem;
@@ -349,7 +384,7 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s, background 0.2s;
 }
 .pay-btn:hover {
