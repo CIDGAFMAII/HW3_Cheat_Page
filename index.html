@@ -7,61 +7,80 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- Header -->
 <header class="site-header">
   <img src="img/logo.png" alt="遠通電收 Logo" class="logo">
-  <img src="img/gps.png" alt="位置圖標" class="gps-icon">
-  <button class="menu-btn">≡</button>
+  <div class="header-right">
+    <img src="img/gps.png" alt="位置圖示" class="gps-icon">
+    <button class="menu-btn">≡</button>
+  </div>
 </header>
 
+<!-- 主內容 -->
 <main class="main-container">
-  <!-- 1. 廣告 / 幻燈片 -->
+  <!-- 幻燈片 / 廣告 -->
   <section class="screenshot-container">
-    <img src="img/ad.png" alt="申辦eTag停車扣繳">
+    <img src="img/ad.png" alt="申辦 eTag 停車扣繳">
   </section>
 
-  <!-- 2. CTA：彈窗觸發 -->
+  <!-- 查詢 / 登入 按鈕 -->
   <button id="openModal" class="cta-btn">
     車號查詢 / 會員登入
   </button>
 
-  <!-- 3~14. 所有截圖一次連續顯示 -->
+  <!-- 其他截圖示意連續顯示 -->
   <section class="screenshot-container">
-    <img src="img/start_1.jpg" alt="eTag聰明好選擇">
-    <img src="img/start_2.jpg" alt="申辦專區">
-    <img src="img/start_3.jpg" alt="銀行促銷活動">
-    <img src="img/start_4.jpg" alt="最新公告">
-    <img src="img/start_6.jpg" alt="即時路況與今日油價">
-    <img src="img/start_7.jpg" alt="服務中心與客服">
-    <img src="img/start_8.jpg" alt="手機版選單示意">
-    <img src="img/start_9.jpg" alt="企業資訊">
-    <img src="img/start_10.jpg" alt="產品服務">
-    <img src="img/start_11.jpg" alt="客服中心 / Q&A">
-    <img src="img/start_12.jpg" alt="相關連結與 footer">
+    <img src="img/start_1.jpg" alt="">
+    <img src="img/start_2.jpg" alt="">
+    <img src="img/start_3.jpg" alt="">
+    <img src="img/start_4.jpg" alt="">
+    <img src="img/start_6.jpg" alt="">
+    <img src="img/start_7.jpg" alt="">
+    <img src="img/start_8.jpg" alt="">
+    <img src="img/start_9.jpg" alt="">
+    <img src="img/start_10.jpg" alt="">
+    <img src="img/start_11.jpg" alt="">
+    <img src="img/start_12.jpg" alt="">
   </section>
 </main>
 
-<!-- 查詢 / 登入 彈窗（不變） -->
+<!-- 查詢 / 登入 彈窗 -->
 <div id="modalOverlay" class="modal-overlay">
-  <div class="modal">
+  <div class="modal plate-modal">
     <button id="closeModal" class="close-btn">×</button>
+    <!-- 分頁切換 -->
     <div class="tabs">
       <button id="modalPlateTab" class="tab active">車號查詢</button>
       <button id="modalLoginTab" class="tab">會員登入</button>
     </div>
+    <!-- 說明文字 -->
+    <p class="modal-desc">
+      登入車號查詢／會員帳號，<br>
+      可立即使用個人化查詢、儲值、繳費等服務
+    </p>
+    <!-- 車號查詢表單 -->
     <form id="modalPlateForm" class="modal-form">
       <input type="text" name="plate" placeholder="請輸入欲查詢的車號" required>
       <input type="text" name="id" placeholder="車主身分證或統一編號" required>
       <div class="captcha-group">
         <input type="text" name="captcha" placeholder="請輸入驗證碼" required>
         <img src="img/captcha.png" alt="驗證碼">
-        <button type="button" id="refreshCaptcha">⟳</button>
+        <button type="button" id="refreshCaptcha" class="refresh-btn">⟳</button>
       </div>
       <button type="submit" class="btn-submit">查詢</button>
+      <a href="#" class="apply-link">立即申請會員帳號 →</a>
     </form>
+    <!-- 會員登入表單（留著備用） -->
     <form id="loginForm" class="modal-form hidden">
-      <input type="text" name="memberId" placeholder="帳號 (N123456789)" required>
-      <input type="password" name="password" placeholder="密碼" required>
-      <button type="submit" class="btn-submit">登入</button>
+      <div class="input-group">
+        <span class="input-icon"><img src="img/user-icon.png" alt=""></span>
+        <input type="text" name="memberId" placeholder="N123456789" required>
+      </div>
+      <div class="input-group">
+        <span class="input-icon"><img src="img/lock-icon.png" alt=""></span>
+        <input type="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn-submit login-btn">登入</button>
     </form>
   </div>
 </div>
