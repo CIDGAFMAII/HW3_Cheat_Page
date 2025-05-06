@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遠通電收｜繳費</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <img src="img/logo.png" alt="遠通電收 Logo" class="logo">
+  <button class="menu-btn">≡</button>
+</header>
+
+<main class="main-container">
+  <h1 class="page-title">繳費資訊</h1>
+  <div class="info-block">
+    <p><strong>商店 (Merchant)：</strong>FETCService</p>
+    <p><strong>交易金額：</strong>NTD 120元</p>
+  </div>
+
+  <form id="paymentForm">
+    <input type="text" name="cardNumber" placeholder="信用卡卡號 (0000-0000-0000-0000)" required>
+    <input type="text" name="expiry" placeholder="有效期 (MM/YY)" required>
+    <input type="text" name="cvv" placeholder="CVV (000)" required>
+    <button type="submit" class="btn-submit">繳費</button>
+  </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

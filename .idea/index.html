@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遠通電收｜首頁</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- header -->
+<header class="site-header">
+  <img src="img/logo.png" alt="遠通電收 Logo" class="logo">
+  <button class="menu-btn">≡</button>
+</header>
+
+<!-- 主畫面 Carousel & CTA -->
+<main class="main-container">
+  <!-- 這裡可以放幻燈片 Carousel，先用示意區塊 -->
+  <div class="carousel-placeholder">
+    <img src="img/ad.png" alt="廣告橫幅" class="ad-banner">
+  </div>
+
+  <!-- 點此彈出查詢/登入 -->
+  <button id="openModal" class="cta-btn">
+    車號查詢 / 會員登入
+  </button>
+
+  <!-- 下方其他功能圖示區，可自行加上 -->
+  <section class="features">
+    <!-- 例如：銀行自動儲值、eTag 智慧停車… -->
+  </section>
+  <div class="image-column">
+    <img src="img/start_1.jpg" alt="網頁" class="image-row">
+    <img src="img/start_2.jpg" alt="網頁" class="image-row">
+    <img src="img/start_3.jpg" alt="網頁" class="image-row">
+    <img src="img/start_4.jpg" alt="網頁" class="image-row">
+    <img src="img/start_5.jpg" alt="網頁" class="image-row">
+    <img src="img/start_6.jpg" alt="網頁" class="image-row">
+    <img src="img/start_7.jpg" alt="網頁" class="image-row">
+    <img src="img/start_8.jpg" alt="網頁" class="image-row">
+    <img src="img/start_9.jpg" alt="網頁" class="image-row">
+    <img src="img/start_10.jpg" alt="網頁" class="image-row">
+    <img src="img/start_11.jpg" alt="網頁" class="image-row">
+    <img src="img/start_12.jpg" alt="網頁" class="image-row">
+  </div>
+</main>
+
+<!-- 查詢 / 登入 彈窗 -->
+<div id="modalOverlay" class="modal-overlay">
+  <div class="modal">
+    <button id="closeModal" class="close-btn">×</button>
+    <!-- 標籤切換 -->
+    <div class="tabs">
+      <button id="modalPlateTab" class="tab active">車號查詢</button>
+      <button id="modalLoginTab" class="tab">會員登入</button>
+    </div>
+    <!-- 車號查詢表單 -->
+    <form id="modalPlateForm" class="modal-form">
+      <input type="text" name="plate" placeholder="請輸入欲查詢的車號" required>
+      <input type="text" name="id" placeholder="車主身分證或統一編號" required>
+      <div class="captcha-group">
+        <input type="text" name="captcha" placeholder="請輸入驗證碼" required>
+        <img src="img/captcha.png" alt="驗證碼">
+        <button type="button" id="refreshCaptcha">⟳</button>
+      </div>
+      <button type="submit" class="btn-submit">查詢</button>
+    </form>
+    <!-- 會員登入表單 -->
+    <form id="loginForm" class="modal-form hidden">
+      <input type="text" name="memberId" placeholder="帳號 (N123456789)" required>
+      <input type="password" name="password" placeholder="密碼" required>
+      <button type="submit" class="btn-submit">登入</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
