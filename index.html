@@ -72,15 +72,15 @@
     </form>
     <!-- 會員登入表單（留著備用） -->
     <form id="loginForm" class="modal-form hidden">
-      <div class="input-group">
-        <span class="input-icon"><img src="img/user-icon.png" alt=""></span>
-        <input type="text" name="memberId" placeholder="N123456789" required>
+      <input type="text" name="plate" placeholder="會員帳號" required>
+      <input type="text" name="id" placeholder="會員密碼" required>
+      <div class="captcha-group">
+        <input type="text" name="captcha" placeholder="請輸入驗證碼" required>
+        <img src="img/captcha.png" alt="驗證碼">
+        <button type="button" id="refreshCaptcha" class="refresh-btn">⟳</button>
       </div>
-      <div class="input-group">
-        <span class="input-icon"><img src="img/lock-icon.png" alt=""></span>
-        <input type="password" name="password" placeholder="••••••••" required>
-      </div>
-      <button type="submit" class="btn-submit login-btn">登入</button>
+      <button type="submit" class="btn-submit">登入</button>
+      <a href="#" class="apply-link">立即申請會員帳號 →</a>
     </form>
   </div>
 </div>
