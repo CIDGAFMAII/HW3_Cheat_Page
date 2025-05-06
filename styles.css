@@ -295,12 +295,67 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     border-radius: 50%;
     display: inline-block;
 }
-.pay-now-btn {
-    background: #c40007;
-    color: #fff;
-    border: none;
+
+/* ---------- 繳費資訊樣式 ---------- */
+.payment-info .row {
+    margin-bottom: 1rem;
+}
+.payment-info .label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+.payment-info .value {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ---------- 繳費表單 ---------- */
+.payment-form {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: 1rem;
+}
+.payment-form .form-row {
+    margin-bottom: 1rem;
+}
+.payment-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+.payment-form input {
     width: 100%;
     padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 1rem;
-    border-radius: 4px;
+    background: #fafafa;
+}
+.payment-form input::placeholder {
+    color: #aaa;
+}
+
+/* ---------- 按鈕樣式 ---------- */
+.pay-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #e60012;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.1s, background 0.2s;
+}
+.pay-btn:hover {
+    transform: translateY(-2px);
+}
+.pay-btn:active {
+    background: #c40007;
+    transform: translateY(0);
 }
