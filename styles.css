@@ -22,6 +22,15 @@ body { font-family: sans-serif; background: #f9f9f9; color: #333; }
     font-size: 1rem; cursor: pointer;
 }
 
+/* GPS 圖示 */
+.gps-icon {
+    width: 24px;           /* 根據需求調整大小 */
+    height: auto;
+    margin-right: 0.5rem;  /* 與菜單按鈕之間留間距 */
+    cursor: pointer;       /* 可以點擊，如果要加互動 */
+    vertical-align: middle;
+}
+
 /* 截圖連續顯示 */
 .screenshot-container {
     display: flex;
